@@ -368,6 +368,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -379,6 +380,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     couverture: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     date: Attribute.Date;
     content: Attribute.RichText;
+    auteur: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
