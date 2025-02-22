@@ -374,13 +374,17 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    titre: Attribute.String;
-    echelle: Attribute.String;
-    domaine: Attribute.String;
-    couverture: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    date: Attribute.Date;
-    content: Attribute.RichText;
-    auteur: Attribute.String;
+    titre: Attribute.String & Attribute.Required;
+    echelle: Attribute.String & Attribute.Required;
+    domaine: Attribute.String & Attribute.Required;
+    couverture: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Attribute.Required;
+    date: Attribute.Date & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    auteur: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -411,12 +415,16 @@ export interface ApiExpositionExposition extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    titre: Attribute.String;
-    lieu: Attribute.String;
-    date: Attribute.Date;
-    couverture: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    content: Attribute.RichText;
-    organisateur: Attribute.String;
+    titre: Attribute.String & Attribute.Required;
+    lieu: Attribute.String & Attribute.Required;
+    date: Attribute.Date & Attribute.Required;
+    couverture: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    organisateur: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
